@@ -1,8 +1,7 @@
 /* Google fonts import */
-<style>@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
-</style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
-/* Asterisk wildcard selector to overide default styles added by the browser */
+/* Asterisk wildcard selector to override default styles added by the browser */
 * {
     padding: 0;
     margin: 0;
@@ -19,11 +18,13 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #252525
+    color: #252525;
 }
 
 /* Header */
@@ -39,7 +40,7 @@ header {
     align-items: baseline;
 }
 
-head a {
+header a {
     text-decoration: none;
     color: inherit;
 }
@@ -55,7 +56,7 @@ head a {
 }
 
 .active {
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #3a3a3a;
 }
 
 /* Navbar styles with dropdown toggle */
@@ -77,21 +78,20 @@ nav {
 
 #nav-toggle {
     display: none;
-
 }
 
 .nav-toggle-label {
     font-size: 2rem;
 }
 
-/* Main Content */
+/* Main content */
 main {
-    /* Make main element take up any surplus space to push footer down*/
+    /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
-    margin-top: 80px;
+    margin-top: 47px;
 }
 
-/* Hero sectio */
+/* Hero section */
 #hero {
     height: 600px;
     width: 100%;
@@ -100,7 +100,7 @@ main {
 }
 
 #cover-text {
-    /* Final rgba value sets the opacity so it is semi-transparent*/
+    /* Final rgba value sets the opacity so it is semi-transparent */
     background-color: rgba(241, 109, 107, .7);
     font-size: 130%;
     position: absolute;
@@ -111,8 +111,59 @@ main {
     padding-left: 10px;
 }
 
-#cover-text > h2, #cover-text > h3 {
+#cover-text>h2,
+#cover-text>h3 {
     color: #ffffff;
+}
+
+/* Reasons section */
+#reasons {
+    width: 90%;
+    margin: 20px auto;
+}
+
+#reasons h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 280%;
+}
+
+#benefits-physical>div,
+#benefits-mental>div {
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+#benefits p {
+    padding: 0 20px;
+}
+
+#benefits hr {
+    border-top: 1px solid #3a3a3a;
+    margin: 5px 0;
+}
+
+#circle-cover-bg {
+    background: url('../images/reasons-image.webp') no-repeat top center / cover;
+    height: 90vw;
+    width: 90vw;
+    margin-bottom: 20px;
+    /* Makes the square image into a circle */
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+#benefits-image {
+    display: flex;
+    align-items: center;
+    justify-content: 300px;
+}
+
+#benefits-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Footer */
@@ -122,7 +173,6 @@ main {
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
-
 }
 
 #social-networks i {
@@ -131,8 +181,7 @@ main {
     color: #3a3a3a;
 }
 
-
-/* Media query: tablets and larger (768px and up */
+/* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
 
     /* Header */
@@ -162,10 +211,10 @@ main {
         margin: 0 0.5rem;
     }
 
-    /* Main Content */
+    /* Main content */
     main {
-        /* Push main content down  to accommodate larger header */
-        margin-top: 94px;
+        /* Push main content down to accommodate larger header */
+        margin-top: 79px;
     }
 
     /* Hero */
@@ -173,11 +222,58 @@ main {
         width: 300px;
         right: 50px;
     }
+
+    /* Reasons section */
+    #benefits-physical,
+    #benefits-mental {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #benefits-physical>div,
+    #benefits-mental>div {
+        width: 75%;
+    }
+
+    #benefits-mental>div {
+        text-align: end;
+        align-self: flex-end;
+    }
+
 }
 
-/* Large device (laptops and desktops, 992px and up) */
+/* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
     #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
+    }
+}
+
+@media screen and (min-width: 1200px) {    
+    /* Reasons section */
+    #benefits {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #benefits > div {
+        flex: 1;
+    }
+
+    #benefits-image {
+        order: 0
+    }
+
+    #benefits-mental {
+        order: 1;
+    }
+
+    #benefits-mental > div {
+        align-self: flex-start;
+    }
+
+    #benefits-physical > div {
+        align-self: flex-end;
     }
 }
