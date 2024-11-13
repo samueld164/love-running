@@ -157,6 +157,12 @@ main {
 #benefits-image {
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+#benefits-image {
+    display: flex;
+    align-items: center;
     justify-content: 300px;
 }
 
